@@ -23,6 +23,28 @@
 /* ============= /VARIABLES ============= */
 
 /* ============= COMMON STYLES ============= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul,
+ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+img {
+    display: block;
+}
+
 .list {
     list-style-type: none;
 }
@@ -38,7 +60,7 @@ button {
     font-size: var(--main-font-size);
     font-weight: var(--medium-font-weight);
     line-height: 1.5;
-    letter-spacing: 0.64px;
+    letter-spacing: 0.04em;
 }
 
 body {
@@ -47,23 +69,81 @@ body {
     color: var(--slate-color); 
     background: var(--white-color);
     line-height: 1.5;
-    letter-spacing: 0.32px;
+    letter-spacing: 0.02em;
+}
+
+.container {
+    max-width: 1158px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15;
+    padding-right: 15;
+}
+
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--navy-blue-color);
+    font-size: var(--h2-font-size);
+    line-height: 1.11;
+    text-transform: capitalize;
+    margin-bottom: 72px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 /* ============= /COMMON STYLES ============= */
 
 /* ============= PAGE HEADER ============= */
+.page-header {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.page-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 452px;
+    justify-content: space-between;
+}
+
 .logotype {
     color: var(--iris-color);
     font-family: var(--secondary-font);
     font-size: var(--logo-font-size);
     font-weight: var(--logo-font-weight);
     line-height: 1.17;
-    letter-spacing: 0.54px;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
 }
 
 .header-logo-color{
     color: var(--navy-blue-color);
+}
+
+.nav-menu {
+    display: flex;
+    column-gap: 40px;
 }
 
 .nav-menu-link {
@@ -73,6 +153,11 @@ body {
 
 .contacts {
     font-style: normal;
+}
+
+.contacts-list {
+    display: flex;
+    column-gap: 40px;
 }
 
 .nav-menu-link:hover,
@@ -85,20 +170,37 @@ body {
 
 /* ============= PAGE HERO ============= */
 .hero {
+    /* padding: 188px 472px 48px; */
     background: var(--navy-blue-color);
+    padding-top: 188px;
+    padding-bottom: 188px;
+    margin-bottom: 60px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+    align-items: center;
 }
 
 .hero-title {
+    width: 496px;
     text-align: center;
     color: var(--white-color);
     font-size: var(--hero-font-size);
     line-height: 1.07;
-    letter-spacing: 1.12px;
+    
 }
 
 .hero-btn {
+    display: inline-flex;
+    padding: 16px 32px;
+    align-items: flex-start;
+    gap: 10px;
     background: var(--iris-color);
     color: var(--white-color);
+    border-radius: 4px;
 }
 
 .hero-btn:hover,
@@ -108,33 +210,49 @@ body {
 /* ============= /PAGE HERO ============= */
 
 /* ============= PAGE BENEFITS ============= */
-.benefits-title {
+.benefits-list {
+    display: flex;
+    column-gap: 24px;
+}
+
+.benefits-list-item{
+    flex-basis: calc(100% - 3 * 24) / 4; 
+}
+
+.benefits-list-title {
     color: var(--navy-blue-color);
     font-size: var(--h3-font-size);
     font-weight: var(--medium-font-weight);
     line-height: 1.2;
-    letter-spacing: 0.4px;
-}
+    margin-bottom: 8px;
+ }
 /* ============= /PAGE BENEFITS ============= */
 
 /* ============= PAGE WHAT DOING ============= */
-.what-doing-title {
-    text-align: center;
-    color: var(--navy-blue-color);
-    font-size: var(--h2-font-size);
-    line-height: 1.11;
-    letter-spacing: 0.72px;
-    text-transform: capitalize
+.what-doing-list {
+    display: flex;
+    column-gap: 24px;   
+}
+
+.what-doing-list-item {
+    flex-basis: calc(100% - 2 * 24) / 3;
 }
 /* ============= /PAGE WHAT DOING ============= */
 
 /* ============= PAGE OUR TEAM ============= */
 .our-team {
     background-color: var(--cloude-color);
+    padding-bottom: 120px;
+}
+
+.team-list {
+    display: flex;
+    column-gap: 24px;
 }
 
 .team-list-item {
     background-color: var(--white-color);
+    flex-basis: calc(100% - 3* 24) / 4;
 }
 
 .team-main-title {
@@ -142,7 +260,7 @@ body {
     color: var(--navy-blue-color);
     font-size: var(--h2-font-size);
     line-height: 1.11;
-    letter-spacing: 0.72px;
+    /* letter-spacing: 0.045em; */
     text-transform: capitalize;
 }
 
@@ -151,7 +269,15 @@ body {
     font-size: var(--h3-font-size);
     font-weight: var(--medium-font-weight);
     line-height: 1.2;
-    letter-spacing: 0.4px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    text-align: center;
+    /* letter-spacing: 0.025em; */
+}
+
+.team-position {
+    margin-bottom: 32px;
+    text-align: center;
 }
 /* ============= /PAGE OUR TEAM ============= */
 
@@ -159,17 +285,43 @@ body {
 .page-footer {
     background: var(--navy-blue-color);
     color: var(--cloude-color);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
 }
 
 .footer-logo-color {
     color: var(--cloude-color);
 }
+
+.footer-text{
+    width: 264px;
+}
 /* ============= /PAGE FOOTER ============= */
 
 /* ============= PORTFOLIO FILTERS ============= */
+.portfolio-cards {
+    padding-top: 96px;
+    padding-bottom: 120px;
+}
+
+.filters-list {
+    display: flex;
+    column-gap: 24px;
+    justify-content: center;
+    margin-bottom: 72px;
+}
+
 .filters-btn {
     background: var(--cloude-color);
     color: var(--iris-color);
+    padding: 12px 24px;
+    border-radius: 4px;
 }
 
 .filters-btn:hover,
@@ -180,11 +332,24 @@ body {
 /* ============= /PORTFOLIO FILTERS ============= */
 
 /* ============= PORTFOLIO PROJECT CARDS ============= */
+.project-cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 24px; 
+}
+
 .project-cards-title{
     color: var(--navy-blue-color);
     font-size: var(--h3-font-size);
     font-weight: var(--medium-font-weight);
     line-height: 1.2;
-    letter-spacing: 0.4px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    margin-left: 16px;
+}
+
+.project-cards-text {
+    margin-bottom: 32px;
+    margin-left: 16px;
 }
 /* ============= /PORTFOLIO PROJECT CARDS ============= */
