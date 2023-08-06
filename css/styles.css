@@ -76,14 +76,14 @@ body {
     max-width: 1158px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15;
-    padding-right: 15;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.section {
+/* .section {
     padding-top: 60px;
     padding-bottom: 60px;
-}
+} */
 
 .section-title {
     text-align: center;
@@ -110,8 +110,7 @@ body {
 
 /* ============= PAGE HEADER ============= */
 .page-header {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    border-bottom: 1px solid var(--cornflower-color);
 }
 
 .page-header-container {
@@ -135,6 +134,7 @@ body {
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    margin-right: 76px;
 }
 
 .header-logo-color{
@@ -143,12 +143,14 @@ body {
 
 .nav-menu {
     display: flex;
-    column-gap: 40px;
+    gap: 40px;
 }
 
 .nav-menu-link {
     color: var(--navy-blue-color);
     font-weight: var(--medium-font-weight);
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .contacts {
@@ -157,7 +159,9 @@ body {
 
 .contacts-list {
     display: flex;
-    column-gap: 40px;
+    gap: 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .nav-menu-link:hover,
@@ -185,7 +189,7 @@ body {
 }
 
 .hero-title {
-    width: 496px;
+    max-width: 496px;
     text-align: center;
     color: var(--white-color);
     font-size: var(--hero-font-size);
@@ -194,12 +198,13 @@ body {
 }
 
 .hero-btn {
-    display: inline-flex;
+    display: block;
     padding: 16px 32px;
-    align-items: flex-start;
-    gap: 10px;
+    min-width: 169px;
+    height: 56px;
     background: var(--iris-color);
     color: var(--white-color);
+    border: none;
     border-radius: 4px;
 }
 
@@ -210,13 +215,18 @@ body {
 /* ============= /PAGE HERO ============= */
 
 /* ============= PAGE BENEFITS ============= */
+.benefits {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
 .benefits-list {
     display: flex;
-    column-gap: 24px;
+    gap: 24px;
 }
 
 .benefits-list-item{
-    flex-basis: calc(100% - 3 * 24) / 4; 
+    flex-basis: calc((100% - 72px) / 4);
 }
 
 .benefits-list-title {
@@ -229,30 +239,41 @@ body {
 /* ============= /PAGE BENEFITS ============= */
 
 /* ============= PAGE WHAT DOING ============= */
+.what-doing {
+    padding-bottom: 120px;
+}
+
 .what-doing-list {
     display: flex;
-    column-gap: 24px;   
+    gap: 24px;   
 }
 
 .what-doing-list-item {
-    flex-basis: calc(100% - 2 * 24) / 3;
+    flex-basis: calc((100% - 2 * 24) / 3);
 }
 /* ============= /PAGE WHAT DOING ============= */
 
 /* ============= PAGE OUR TEAM ============= */
 .our-team {
     background-color: var(--cloude-color);
-    padding-bottom: 120px;
+    padding: 120px 0;
 }
 
 .team-list {
     display: flex;
-    column-gap: 24px;
+    gap: 24px;
 }
 
 .team-list-item {
     background-color: var(--white-color);
-    flex-basis: calc(100% - 3* 24) / 4;
+    flex-basis: calc((100% - 3* 24) / 4);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.member-container {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 0;
 }
 
 .team-main-title {
@@ -260,7 +281,6 @@ body {
     color: var(--navy-blue-color);
     font-size: var(--h2-font-size);
     line-height: 1.11;
-    /* letter-spacing: 0.045em; */
     text-transform: capitalize;
 }
 
@@ -269,14 +289,11 @@ body {
     font-size: var(--h3-font-size);
     font-weight: var(--medium-font-weight);
     line-height: 1.2;
-    margin-top: 32px;
     margin-bottom: 8px;
     text-align: center;
-    /* letter-spacing: 0.025em; */
 }
 
 .team-position {
-    margin-bottom: 32px;
     text-align: center;
 }
 /* ============= /PAGE OUR TEAM ============= */
@@ -292,7 +309,11 @@ body {
 .footer-container {
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
 .footer-logo-color {
@@ -312,7 +333,7 @@ body {
 
 .filters-list {
     display: flex;
-    column-gap: 24px;
+    gap: 24px;
     justify-content: center;
     margin-bottom: 72px;
 }
@@ -322,12 +343,15 @@ body {
     color: var(--iris-color);
     padding: 12px 24px;
     border-radius: 4px;
+    border: 1px solid var(--cornflower-color);
+
 }
 
 .filters-btn:hover,
 .filters-btn:focus {
     background: var(--ocean-color);
     color: var(--white-color);
+    border: 1px solid transparent;
 }
 /* ============= /PORTFOLIO FILTERS ============= */
 
@@ -335,7 +359,14 @@ body {
 .project-cards-list {
     display: flex;
     flex-wrap: wrap;
+    flex-basis: calc((100% - 2 * 24px) / 3);
     gap: 48px 24px; 
+}
+
+.project-cards-conteiner {
+    padding: 32px 16px;
+    border: 1px solid var(--cornflower-color);
+    border-top: none;
 }
 
 .project-cards-title{
@@ -343,13 +374,6 @@ body {
     font-size: var(--h3-font-size);
     font-weight: var(--medium-font-weight);
     line-height: 1.2;
-    margin-top: 32px;
     margin-bottom: 8px;
-    margin-left: 16px;
-}
-
-.project-cards-text {
-    margin-bottom: 32px;
-    margin-left: 16px;
 }
 /* ============= /PORTFOLIO PROJECT CARDS ============= */
