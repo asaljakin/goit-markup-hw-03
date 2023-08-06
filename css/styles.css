@@ -306,11 +306,6 @@ body {
     padding-bottom: 100px;
 }
 
-.footer-container {
-    display: flex;
-    flex-direction: column;
-}
-
 .footer-logo {
     display: inline-block;
     margin-bottom: 16px;
